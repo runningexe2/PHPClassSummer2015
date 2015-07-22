@@ -9,10 +9,12 @@
     </head>
     <body>
         
-        
-        <?php  
+        <h1> My Number Is       
+        <?php       
             $randNumber = rand(1,10);
-            echo 'my number is '.$randNumber;
+            echo $randNumber;
         ?>
+        </h1>
+        
     </body>
 </html>
