@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title> <?php echo 'My Page Title'.$myvar; ?> </title>
     </head>
     <body>
         <?php
-        // put your code here
+            $myvar = 'hello';
+            echo 'this is some text';
+            echo $myvar;
         ?>
     </body>
 </html>
