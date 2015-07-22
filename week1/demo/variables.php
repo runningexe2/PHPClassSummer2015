@@ -1,14 +1,20 @@
 <!DOCTYPE html>
+<?php
+   $myvar = 'hello'; 
+?>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> <?php echo 'My Page Title'.$myvar; ?> </title>
+        <title><?php echo 'My page Title'.$myvar; ?></title>
     </head>
     <body>
         <?php
-            $myvar = 'hello';
-            echo 'this is some text';
-            echo $myvar;
+            $randNumber = rand(1,10);
+        
+            echo 'My Number is '.$randNumbe;
+          
         ?>
+        
+        
     </body>
 </html>
