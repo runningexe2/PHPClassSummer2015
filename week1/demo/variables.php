@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-   $myvar = 'hello'; 
+    $myvar = 'hello';
 ?>
 <html>
     <head>
@@ -8,13 +8,11 @@
         <title><?php echo 'My page Title'.$myvar; ?></title>
     </head>
     <body>
-        <?php
+        
+        
+        <?php  
             $randNumber = rand(1,10);
-        
-            echo 'My Number is '.$randNumbe;
-          
+            echo 'my number is '.$randNumber;
         ?>
-        
-        
     </body>
 </html>
