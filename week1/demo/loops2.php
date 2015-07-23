@@ -6,6 +6,11 @@
     </head>
     <body>
         
+        <?php>
+            /*
+             * Table Generator
+             */
+        ?>
                
         <table border = "1">            
             <?php for ($tr = 1; $tr <= 3; $tr++): ?>               
