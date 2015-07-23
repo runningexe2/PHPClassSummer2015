@@ -6,22 +6,18 @@
     </head>
     <body>
         
-        <table>           
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>           
+               
+        <table border = "1">            
+            <?php for ($tr = 1; $tr <= 3; $tr++): ?>               
+                <tr> 
+                    <?php for ($td = 1; $td <= 3; $td++): ?>
+                        <td>
+                            <?php echo $td; ?>
+                        </td>
+                    <?php endfor; ?>                 
+                </tr>  
+            <?php endfor; ?>
         </table>
-        
-        
-        <ul>            
-        <?php for ($index = 1; $index < 10; $index++): ?>   
-            
-            <li> <?php  echo $index; ?> </li>    
-            
-        <?php endfor; ?>              
-        </ul>
         
         
     </body>
