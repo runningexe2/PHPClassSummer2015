@@ -6,9 +6,11 @@ function getDatabase() {
         'DB_USER' => 'php',
         'DB_PASSWORD' => 'summer15'
     );
-
-    $db = new PDO($config['DB_DNS'], $config['DB_USER'], $config['DB_PASSWORD']);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
+    try {
+        $db = new PDO($config['DB_DNS'], $config['DB_USER'], $config['DB_PASSWORD']);
+        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    } catch (Exception $ex) {
+        $db = null;
+    }
     return $db;
 }
