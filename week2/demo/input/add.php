@@ -6,11 +6,11 @@
     </head>
     <body>
         <?php
-            include './dbconnect.php';
-            
-            $db = getDatabase();
-            
-            var_dump($db);
+        include './dbconnect.php';
+
+        $db = getDatabase();
+
+        var_dump($db);
         ?>
     </body>
 </html>
