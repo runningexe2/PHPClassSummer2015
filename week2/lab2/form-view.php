@@ -15,14 +15,14 @@
 
             $db = getDatabase();
 
-            $stmt = $db->prepare("INSERT INTO test SET firstName = :firstName, lastName = :lastName, dob = :dob, height = :height");
-            $firstName = filter_input(INPUT_POST, 'firstName');
-            $lastName = filter_input(INPUT_POST, 'lastName');
+            $stmt = $db->prepare("INSERT INTO test SET firstName = :firstname, lastName = :lastname, dob = :dob, height = :height");
+            $firstName = filter_input(INPUT_POST, 'firstname');
+            $lastName = filter_input(INPUT_POST, 'lastname');
             $dob = filter_input(INPUT_POST, 'dob');
             $height = filter_input(INPUT_POST, 'height');
             $binds = array(
-                ":firstName" => $firstName,
-                ":lastName" => $lastName,
+                ":firstname" => $firstName,
+                ":lastname" => $lastName,
                 ":dob" => $dob,
                 ":height" => $height
             );
@@ -37,13 +37,13 @@
         <h1><?php echo $results; ?></h1>
 
         <form method="post" action="#">            
-            <h2>  First Name: <input type="text" value="" name="firstName" /></h2>
+            First Name: <input type="text" value="" name="firstname" />
             <br />
-            <h2>Last Name: <input type="text" value="" name="lastName" /></h2>
+            Last Name: <input type="text" value="" name="lastname" />
             <br />  
-            <h2>Date of Birth: <input type="date" value="" name="dob" /></h2>
-            <br />  
-            <h2>Height: <input type="text" value="" name="height" /></h2>
+            Date of Birth: <input type="date" value="" name="dob" />
+            <br /> 
+            Height: <input type="text" value="" name="height" />
             <br />       
             <input type="submit" value="Submit" />
         </form>
