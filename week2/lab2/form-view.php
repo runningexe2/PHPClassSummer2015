@@ -15,7 +15,7 @@
 
             $db = getDatabase();
 
-            $stmt = $db->prepare("INSERT INTO test SET firstName = :firstname, lastName = :lastname, dob = :dob, height = :height");
+            $stmt = $db->prepare("INSERT INTO actors SET firstName = :firstname, lastName = :lastname, dob = :dob, height = :height");
             $firstName = filter_input(INPUT_POST, 'firstname');
             $lastName = filter_input(INPUT_POST, 'lastname');
             $dob = filter_input(INPUT_POST, 'dob');
@@ -36,7 +36,7 @@
 
         <h1><?php echo $results; ?></h1>
 
-        <form method="post" action="#">            
+        <form method="post" action="table-view-display.php">            
             First Name: <input type="text" value="" name="firstname" />
             <br />
             Last Name: <input type="text" value="" name="lastname" />
