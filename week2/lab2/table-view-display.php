@@ -9,6 +9,8 @@
         include './dbConn.php';
         include './functions.php';
 
+        $results = '';
+        
         if (isPostRequest()) {
 
             $db = getDatabase();
@@ -25,18 +27,21 @@
                 ":dob" => $dob,
                 ":height" => $height
             );
-
-            $results = array();
-            if ($stmt->execute() && $stmt->rowCount() > 0) {
+            
+            var_dump($binds);
+            
+            if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                 //$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $results = 'Date Added';
             }
         }
         ?>
 
+        <h1><?php echo $results; ?></h1>
+
         <?php
         $db = getDatabase();
-        
+
         $stmt = $db->prepare("SELECT * FROM actors");
         $results = array();
         if ($stmt->execute() && $stmt->rowCount() > 0) {
@@ -56,8 +61,8 @@
 
 
 
-<?php foreach ($results as $row):
-    ?>
+            <?php foreach ($results as $row):
+                ?>
                 <tr>
                     <td><?php echo $row['id']; ?></td>
                     <td><?php echo $row['firstName']; ?></td>
@@ -65,7 +70,7 @@
                     <td><?php echo $row['dob']; ?></td>            
                     <td><?php echo $row['height']; ?></td>            
                 </tr>
-<?php endforeach; ?>
+            <?php endforeach; ?>
         </table>
 
     </body>
