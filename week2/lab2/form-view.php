@@ -7,13 +7,14 @@
     <body>
         <?php
         include './dbConn.php';
+        include './functions.php';
 
         $results = '';
 
         if (isPostRequest()) {
-            
+
             $db = getDatabase();
-            
+
             $stmt = $db->prepare("INSERT INTO test SET firstName = :firstName, lastName = :lastName, dob = :dob, height = :height");
             $firstName = filter_input(INPUT_POST, 'firstName');
             $lastName = filter_input(INPUT_POST, 'lastName');
@@ -27,7 +28,7 @@
             );
 
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
-                //$results = $stmt->fetch(PDO::FETCH_ASSOC);
+                //$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $results = 'Data Added';
             }
         }
@@ -36,13 +37,13 @@
         <h1><?php echo $results; ?></h1>
 
         <form method="post" action="#">            
-            First Name: <input type="text" value="" name="firstName" />
+            <h2>  First Name: <input type="text" value="" name="firstName" /></h2>
             <br />
-            Last Name: <input type="text" value="" name="lastName" />
+            <h2>Last Name: <input type="text" value="" name="lastName" /></h2>
             <br />  
-            Date of Birth: <input type="date" value="" name="dob" />
+            <h2>Date of Birth: <input type="date" value="" name="dob" /></h2>
             <br />  
-            Height: <input type="text" value="" name="height" />
+            <h2>Height: <input type="text" value="" name="height" /></h2>
             <br />       
             <input type="submit" value="Submit" />
         </form>
