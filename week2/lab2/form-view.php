@@ -11,7 +11,9 @@
         $results = '';
 
         if (isPostRequest()) {
+            
             $db = getDatabase();
+            
             $stmt = $db->prepare("INSERT INTO test SET firstName = :firstName, lastName = :lastName, dob = :dob, height = :height");
             $firstName = filter_input(INPUT_POST, 'firstName');
             $lastName = filter_input(INPUT_POST, 'lastName');
@@ -25,7 +27,7 @@
             );
 
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
-                $results = $stmt->fetch(PDO::FETCH_ASSOC);
+                //$results = $stmt->fetch(PDO::FETCH_ASSOC);
                 $results = 'Data Added';
             }
         }
