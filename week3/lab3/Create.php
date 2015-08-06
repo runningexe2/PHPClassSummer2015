@@ -17,14 +17,12 @@
 
             $stmt = $db->prepare("INSERT INTO corps SET corp = :corp, incorp_dt = now(), email = :email, zipcode = :zipcode, owner = :owner, phone = :phone");
             $corp = filter_input(INPUT_POST, 'corp');
-            $inCorpDT = filter_input(INPUT_POST, 'incorp_dt');
             $email = filter_input(INPUT_POST, 'email');
             $zipcode = filter_input(INPUT_POST, 'zipcode');
             $owner = filter_input(INPUT_POST, 'owner');
             $phone = filter_input(INPUT_POST, 'phone');
             $binds = array(
                 ":corp" => $corp,
-                ":incorp_dt" => $inCorpDT,
                 ":email" => $email,
                 ":zipcode" => $zipcode,
                 ":owner" => $owner,
@@ -42,8 +40,6 @@
         <h3>Enter Corporation Info</h3>
         <form method="post" action="#">            
             Corp: <input type="text" value="" name="corp" />
-            <br /><br /> 
-            Incorp. Date: <input type="text" value="" name="incorp_dt" />
             <br /><br /> 
             E-Mail: <input type="text" value="" name="email" />
             <br /><br /> 

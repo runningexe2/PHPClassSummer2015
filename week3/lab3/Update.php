@@ -33,7 +33,8 @@
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                 $result = 'Record updated';
             }
-        } else {
+        } 
+        else {
             $id = filter_input(INPUT_GET, 'id');
             $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
             $binds = array(
@@ -53,7 +54,8 @@
         }
         ?>
 
-    <center><h1><?php echo $result; ?></h1>
+    <center>
+            <h1><?php echo $result; ?></h1>
 
 
         <form method="post" action="#">            
