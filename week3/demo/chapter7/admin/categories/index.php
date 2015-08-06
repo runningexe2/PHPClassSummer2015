@@ -1,6 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] .
-    '/includes/magicquotes.inc.php';
+include_once ('../../includes/magicquotes.inc.php');
 
 if (isset($_GET['add']))
 {
@@ -16,7 +15,7 @@ if (isset($_GET['add']))
 
 if (isset($_GET['addform']))
 {
-  include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+  include ('../../includes/db.inc.php');
 
   try
   {
@@ -39,7 +38,7 @@ if (isset($_GET['addform']))
 
 if (isset($_POST['action']) and $_POST['action'] == 'Edit')
 {
-  include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+  include ('../../includes/db.inc.php');
 
   try
   {
@@ -69,7 +68,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'Edit')
 
 if (isset($_GET['editform']))
 {
-  include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+  include ('../../includes/db.inc.php');
 
   try
   {
@@ -94,7 +93,7 @@ if (isset($_GET['editform']))
 
 if (isset($_POST['action']) and $_POST['action'] == 'Delete')
 {
-  include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+  include ('../../includes/db.inc.php');
 
   // Delete joke associations with this category
   try
@@ -131,7 +130,7 @@ if (isset($_POST['action']) and $_POST['action'] == 'Delete')
 }
 
 // Display category list
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/db.inc.php';
+include ('../../includes/db.inc.php');
 
 try
 {
