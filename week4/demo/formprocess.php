@@ -16,8 +16,8 @@
             echo 'submitted form 2';
         }
                 
-        include './form1.php';
-        include './form2.php';
+        include './includes/form1.php';
+        include './includes/form2.php';
         
         ?>
     </body>

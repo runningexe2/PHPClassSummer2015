@@ -7,16 +7,14 @@
     <body>
         <?php
         
-           include_once './dbconnect.php';
-            
-           $db = dbconnect();
+           include_once './functions/dbconnect.php';
+           include_once './functions/dbData.php';
            
-           $stmt = $db->prepare("SELECT * FROM test");
-           
-            $results = array();
-            if ($stmt->execute() && $stmt->rowCount() > 0) {
-                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            }
+           /*$results = getAllTestData();*/
+           $column = 'datatwo';
+           $search = 'test';
+           $results = searchTest($search, $column);
+         
             
         ?>
         
