@@ -23,6 +23,7 @@
             $stmt = $db->prepare("UPDATE corps SET corp = :corp, email = :email, zipcode = :zipcode, owner = :owner, phone = :phone WHERE id = :id");
 
             $binds = array(
+                ":id" => $id,
                 ":corp" => $corp,
                 ":email" => $email,
                 ":zipcode" => $zipcode,
