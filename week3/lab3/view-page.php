@@ -3,6 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
     </head>
     <body>
         <?php
@@ -21,12 +28,12 @@
         }
         ?>
 
-    <center>
-        <table>
+  
+        <table class="table table-striped">
             <thead>
                 <tr>
 
-                    <th><h2><a href="create.php">Add</a> a New Corporation</h2></th>
+            <center>    <th><h3> <a href="create.php"> Add</a> a New Corporation</h3></th></center>  
 
             </tr>
             </thead>
@@ -36,13 +43,12 @@
             <?php foreach ($results as $row): ?>
                 <tr>
                     <td><?php echo $row['corp']; ?></td>
-                    <td><a href="Read.php?id=<?php echo $row['id']; ?>">Read</a></td> 
-                    <td><a href="Update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
-                    <td><a href="Delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>            
+                    <td><a class="btn btn-primary" href="Read.php?id=<?php echo $row['id']; ?>">Read</a></td> 
+                    <td><a class="btn btn-success" href="Update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
+                    <td><a class="btn btn-danger" href="Delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>            
                 </tr>
             <?php endforeach; ?>
         </table>
-    </center>
 
 </body>
 </html>
