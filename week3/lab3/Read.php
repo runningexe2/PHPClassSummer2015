@@ -21,7 +21,7 @@
 
         $db = getDatabase();
 
-
+            
             $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
             $id = filter_input(INPUT_GET, 'id');
             $binds = array(

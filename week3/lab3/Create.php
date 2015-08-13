@@ -22,7 +22,8 @@
         if (isPostRequest()) {
 
             $db = getDatabase();
-
+            
+            /*Inserts the user-inserted data into the corps database*/
             $stmt = $db->prepare("INSERT INTO corps SET corp = :corp, incorp_dt = now(), email = :email, zipcode = :zipcode, owner = :owner, phone = :phone");
             $corp = filter_input(INPUT_POST, 'corp');
             $email = filter_input(INPUT_POST, 'email');
@@ -36,7 +37,8 @@
                 ":owner" => $owner,
                 ":phone" => $phone
             );
-
+            
+            /*Checks to see if the prepare statement executes properly*/
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                 //$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $results = 'Corporation Added';

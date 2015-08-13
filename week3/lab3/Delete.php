@@ -21,7 +21,8 @@
         $db = getDatabase();
 
         $id = filter_input(INPUT_GET, 'id');
-
+        
+        /*Deletes the SELECTED piece of data*/
         $stmt = $db->prepare("DELETE FROM corps WHERE id = :id");
 
         $binds = array(
