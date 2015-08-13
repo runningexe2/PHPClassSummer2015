@@ -15,6 +15,7 @@
         
         if (isPostRequest()) {
             
+            $id = filter_input(INPUT_POST, 'id');
             $corp = filter_input(INPUT_POST, 'corp');
             $email = filter_input(INPUT_POST, 'email');
             $zipcode = filter_input(INPUT_POST, 'zipcode');
