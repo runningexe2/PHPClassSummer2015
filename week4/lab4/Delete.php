@@ -15,8 +15,11 @@
     </head>
     <body>
         <?php
-        include './dbconnect.php';
-        include './functions.php';
+       include './includes/Sort.php';
+        include './includes/Search.php';
+        include './functions/dbconnect.php';
+        include './functions/dbData.php';
+        include './functions/util.php';
 
         $db = getDatabase();
 

@@ -17,6 +17,9 @@
 
         include './includes/Sort.php';
         include './includes/Search.php';
+        include './functions/dbconnect.php';
+        include './functions/dbData.php';
+        include './functions/util.php';
         ?>
     </body>
 </html>

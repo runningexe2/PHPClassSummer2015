@@ -21,6 +21,11 @@
             </select>
             <input type ="hidden" name="action" value ="sort"/>
             <input type="submit" value="Submit">
+            </br >
         </fieldset>
-
+        </br >
+        </br >
+        </br >
+        </br >
+        </br >
     </form></center>
