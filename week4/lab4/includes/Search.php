@@ -1,4 +1,5 @@
-<form action="#" method="GET">
+<form  align="right" action="#" method="GET">
+    
     <fieldset>
         <b><legend>SEARCH</legend></b>
         <label>Column</label>  
