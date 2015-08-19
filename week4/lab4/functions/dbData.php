@@ -5,7 +5,7 @@ function getAllTestData() {
 
     $db = dbconnect();
 
-    $stmt = $db->prepare("SELECT * FROM test");
+    $stmt = $db->prepare("SELECT * FROM corps");
 
     $results = array();
     if ($stmt->execute() && $stmt->rowCount() > 0) {
@@ -18,7 +18,7 @@ function searchTest($column, $search) {
 
     $db = dbconnect();
 
-    $stmt = $db->prepare("SELECT * FROM test WHERE $column LIKE :search");
+    $stmt = $db->prepare("SELECT * FROM corps WHERE $column LIKE :search");
     
     $search = '%'.$search.'%';
     $binds = array(
