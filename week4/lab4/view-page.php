@@ -6,7 +6,8 @@
         
         
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../lab4/includes/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../lab4/includes/css/style.css">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -19,6 +20,7 @@
         include './functions/dbconnect.php';
         include './functions/dbData.php';
         include './functions/util.php';
+        
 
         $db = getDatabase();
 

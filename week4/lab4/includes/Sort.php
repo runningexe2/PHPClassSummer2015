@@ -1,4 +1,4 @@
-<center><form action = "#" method = "post">
+<form action = "#" method = "post">
 
         <fieldset>
             <legend><b>Sorting Data</b></legend>
@@ -28,4 +28,4 @@
         </br >
         </br >
         </br >
-    </form></center>
+    </form>
