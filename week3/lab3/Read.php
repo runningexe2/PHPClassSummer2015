@@ -12,7 +12,8 @@
 
         $db = getDatabase();
 
-
+            /*when the user clicks 'Read' it realizes which id it is 
+             * attached to and reads out that line of data*/
             $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
             $id = filter_input(INPUT_GET, 'id');
             $binds = array(

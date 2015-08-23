@@ -15,6 +15,8 @@
         
         if (isPostRequest()) {
             
+            /*When the user inputs their data and hits Update, the prepare statement 
+             * runs and executes the binds so they update the changed data.*/
             $id = filter_input(INPUT_POST, 'id'); 
             $corp = filter_input(INPUT_POST, 'corp');
             $email = filter_input(INPUT_POST, 'email');
@@ -37,6 +39,8 @@
             }
         } 
         else {
+            /*if data isn't found with an attached id and that 
+             * doesn't exists, runs an error of Record Not Found*/
             $id = filter_input(INPUT_GET, 'id');
             $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
             $binds = array(

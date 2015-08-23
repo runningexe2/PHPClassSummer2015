@@ -19,7 +19,7 @@
 
         $db = getDatabase();
 
-
+        /*grabbing all of the data inside the corps database*/
         $stmt = $db->prepare("SELECT * FROM corps");
 
         $results = array();
