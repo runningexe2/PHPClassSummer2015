@@ -20,11 +20,14 @@
         $results = getAllDatabaseData();
         $action = filter_input(INPUT_GET, 'action');
         if ($action === 'sort') {
-
+            /*this will sort the data in either asc or desc order, whichever is selected. 
+             * $column and $order are referenced in the sort.php page*/
             $column = filter_input(INPUT_GET, 'sortby');
             $order = filter_input(INPUT_GET, 'sort');
             $results = sortDatabase($column, $order);
         }
+        /*Searches for data, comparing your input to data that exists using '%' to ensure
+        the data is valid or not by matching characters/numbers. if not, spits an error.*/
         if ($action === 'search') {
             $column = filter_input(INPUT_GET, 'colSearch');
             $Search = filter_input(INPUT_GET, 'Search');

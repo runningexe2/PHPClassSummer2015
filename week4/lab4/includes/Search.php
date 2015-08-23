@@ -19,6 +19,7 @@
         
         <input type="submit" class="btn btn-primary" value="Submit" />
         
+        <!--Clicking the clear button will reset the page so it basically leads back to the original view page.-->
         <input type="reset" class="btn btn-default" value="Clear" onClick="location.href='view-page.php'" />
 
 </form></center>

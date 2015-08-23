@@ -12,7 +12,8 @@ function getAllDatabaseData()
 }
 function searchDatabase($column, $Search)
 {
-    
+    /*searches through the database to find pieces of data that are 
+     * similar to your input. the '%' matches any number of characters.*/
     $db = dbconnect();
     $stmt = $db->prepare("SELECT * FROM corps WHERE $column LIKE CONCAT(:search, '%')");
     
