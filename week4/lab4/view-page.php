@@ -1,59 +1,63 @@
-<!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-        
-        
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="../lab4/includes/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../lab4/includes/css/style.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="includes/css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <title></title>        
     </head>
     <body>
+        <br/>
+
         <?php
-        include './includes/Sort.php';
-        include './includes/Search.php';
-        include './functions/dbconnect.php';
-        include './functions/dbData.php';
-        include './functions/util.php';
         
+        include './Includes/Sort.php';
+        include './Includes/Search.php';
+        include_once './functions/dbconnect.php';
+        include_once './functions/dbData.php';
 
-        $db = getDatabase();
+        $results = getAllDatabaseData();
+        $action = filter_input(INPUT_GET, 'action');
+        if ($action === 'sort') {
 
-
-        $stmt = $db->prepare("SELECT * FROM corps");
-
-        $results = array();
-        if ($stmt->execute() && $stmt->rowCount() > 0) {
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $column = filter_input(INPUT_GET, 'sortby');
+            $order = filter_input(INPUT_GET, 'sort');
+            $results = sortDatabase($column, $order);
+        }
+        if ($action === 'search') {
+            $column = filter_input(INPUT_GET, 'colSearch');
+            $Search = filter_input(INPUT_GET, 'Search');
+            $results = searchDatabase($column, $Search);
         }
         ?>
+        <br>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
+    <br/>
+    <table class="table table-striped">
+        <thead>
+        <th>ID:</th>
+        <th>Corporations:</th>
+        <th>Date:</th>
+        <th>E-mail:</th>
+        <th>Zip-Code:</th> 
+        <th>Owner:</th> 
+        <th>Phone:</th>         
+    </thead>
 
-            <th><h2><a href="create.php">Add</a> a New Corporation</h2></th>
+    <?php foreach ($results as $row): ?>
+        <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['corp']; ?></td>
+            <td><?php echo $row['incorp_dt']; ?></td> 
+            <td><?php echo $row['email']; ?></td> 
+            <td><?php echo $row['zipcode']; ?></td> 
+            <td><?php echo $row['owner']; ?></td> 
+            <td><?php echo $row['phone']; ?></td> 
+        </tr>
+    <?php endforeach; ?>
 
-            </tr>
-            </thead>
-            <?php
-            ?>
-
-            <?php foreach ($results as $row): ?>
-                <tr>
-                    <td><?php echo $row['corp']; ?></td>
-                    <td><a class="btn btn-primary" href="Read.php?id=<?php echo $row['id']; ?>">Read</a></td> 
-                    <td><a class="btn btn-info" href="Update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-danger" href="Delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>            
-                </tr>
-            <?php endforeach; ?>
-        </table>
-
+</table>
 
 </body>
 </html>

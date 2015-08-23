@@ -3,29 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
     </head>
     <body>
         <?php
-        include './includes/Sort.php';
-        include './includes/Search.php';
-        include './functions/dbconnect.php';
-        include './functions/dbData.php';
-        include './functions/util.php';
+        include './dbconnect.php';
+        include './functions.php';
 
         $db = getDatabase();
 
         $result = '';
-
+        
         if (isPostRequest()) {
-
-            $id = filter_input(INPUT_POST, 'id');
+            
+            $id = filter_input(INPUT_POST, 'id'); 
             $corp = filter_input(INPUT_POST, 'corp');
             $email = filter_input(INPUT_POST, 'email');
             $zipcode = filter_input(INPUT_POST, 'zipcode');
@@ -45,7 +35,8 @@
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                 $result = 'Record updated';
             }
-        } else {
+        } 
+        else {
             $id = filter_input(INPUT_GET, 'id');
             $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
             $binds = array(
@@ -57,7 +48,7 @@
             if (!isset($id)) {
                 die('Record not found');
             }
-            $corp = $results['corp'];
+            $corp = $results['corp'];           
             $email = $results['email'];
             $zipcode = $results['zipcode'];
             $owner = $results['owner'];
@@ -66,11 +57,11 @@
         ?>
 
     <center>
-        <h1><?php echo $result; ?></h1>
+            <h1><?php echo $result; ?></h1>
 
 
-      <form  method="post" action="#">            
-            CORP <input  type="text" value="<?php echo $corp; ?>" name="corp" />
+        <form method="post" action="#">            
+            CORP <input type="text" value="<?php echo $corp; ?>" name="corp" />
             <br /><br />   
             E-Mail <input type="text" value="<?php echo $email; ?>" name="email" />
             <br /><br />  
@@ -82,11 +73,9 @@
             <br /><br />  
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
-        </form> 
+        </form>
 
-
-
-        <p> <a class="btn btn-default btn-xs" href="view-page.php">Index</a></p>
+        <p> <a href="view-page.php">View page</a></p>
     </center>
 </body>
 </html>

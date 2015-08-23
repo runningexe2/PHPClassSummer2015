@@ -3,28 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        
-        
-         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        
-        
     </head>
     <body>
         <?php
-    include './includes/Sort.php';
-        include './includes/Search.php';
-        include './functions/dbconnect.php';
-        include './functions/dbData.php';
-        include './functions/util.php';
+        include './dbconnect.php';
+        include './functions.php';
 
 
         $db = getDatabase();
 
-            
+
             $stmt = $db->prepare("SELECT * FROM corps WHERE id = :id");
             $id = filter_input(INPUT_GET, 'id');
             $binds = array(
@@ -38,7 +26,7 @@
         ?>
 
     <center>
-        <table  class="table table-striped">
+        <table>
             <thead>
                 <tr>
                     <th>Corporation: </th>                 
@@ -61,8 +49,8 @@
                     <td><?php echo $row['owner']; ?></td>
                     <td><?php echo $row['phone']; ?></td>
 
-                    <td><a class="btn btn-success" href="Update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-danger" href="Delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>            
+                    <td><a href="Update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
+                    <td><a href="Delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>            
                 </tr>
             <?php endforeach; ?>
         </table>

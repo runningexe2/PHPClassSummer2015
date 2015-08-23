@@ -3,29 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        
-        
-         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        
-        
     </head>
     <body>
         <?php
-       include './includes/Sort.php';
-        include './includes/Search.php';
-        include './functions/dbconnect.php';
-        include './functions/dbData.php';
-        include './functions/util.php';
+        include './dbconnect.php';
+        include './functions.php';
 
         $db = getDatabase();
 
         $id = filter_input(INPUT_GET, 'id');
-        
-        /*Deletes the SELECTED piece of data*/
+
         $stmt = $db->prepare("DELETE FROM corps WHERE id = :id");
 
         $binds = array(

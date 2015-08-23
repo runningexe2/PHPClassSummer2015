@@ -1,31 +1,26 @@
-<form action = "#" method = "post">
 
-        <fieldset>
-            <legend><b>Sorting Data</b></legend>
-            <label>Sort By:    </label>
-            <input type = "radio" name = "option" value = "Yes">Ascending
-            <input type = "radio" name = "option" value = "No">Descending
-            </br >
+<center><form  action="#" method="get">
+        <br><br>
+        <br>
+        <label>Ascending:&#160&#160</label><input type="radio" name="sort" value="ASC" />&#160&#160 &#160&#160
+        <label>Descending:&#160&#160</label><input type="radio" name="sort" value="DESC" />
+        <br>
+        <label >Sort By:</label> 
+        <br/>
+        <select class="btn btn-default" name="sortby">
+            <option value="id">ID</option>
+            <option value="corp">Corporation Name</option>
+            <option value="incorp_dt">Incorporation Date</option>
+            <option value="email">E-mail</option>
+            <option value="zipcode">Zip-Code:</option>
+            <option value="owner">Owner</option>
+            <option value="phone">Phone</option>
+        </select>
+        <br/>
+        <input type="hidden" name="action" value="sort" />
+        <br/>
+        <input align="right" type="submit" class="btn btn-primary" value="Submit" />
 
-            <h3> What to sort </h3>
-
-            <label></label>
-            <select>
-                <option value = "id">ID</option>
-                <option value = "corp">Corporation</option>       
-                <option value = "incorp_dt">Incorp. Date</option> 
-                <option value = "email">E-Mail</option> 
-                <option value = "zipcode">Zip-Code</option> 
-                <option value = "owner">Owner</option> 
-                <option value = "phone">Phone</option> 
-            </select>
-            <input type ="hidden" name="action" value ="sort"/>
-            <input type="submit" value="Submit">
-            </br >
-        </fieldset>
-        </br >
-        </br >
-        </br >
-        </br >
-        </br >
-    </form>
+        <input type="reset" class="btn btn-default" value="Clear" onClick="location.href = 'view-page.php'" />
+        <br/><br/><br/><br/>
+    </form></center>
