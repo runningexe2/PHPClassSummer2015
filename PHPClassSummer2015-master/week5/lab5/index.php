@@ -27,9 +27,9 @@
             $db = dbconnect();
 
             $stmt = $db->prepare("INSERT INTO sites SET site = :site, date = now()");
-            $webSite = filter_input(INPUT_POST, 'site');
+            $site = filter_input(INPUT_POST, 'site');
 
-            if (filter_var($webSite, FILTER_VALIDATE_URL) === false) {
+            if (filter_var($site, FILTER_VALIDATE_URL) === false) {
                 $isValid = false;
                 $textbox = filter_input(INPUT_POST, 'site');
                 $results = 'Please Enter a Valid Website.';
