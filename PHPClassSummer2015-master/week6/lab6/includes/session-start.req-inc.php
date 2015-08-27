@@ -11,8 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        require_once'../../includes/access-required.html.php';
-        require_once'../../includes/session-start.req-inc.php';
+        // put your code here
         ?>
     </body>
 </html>

@@ -8,6 +8,7 @@
         <?php
         // put your code here
         
+        require_once '../../includes/session-start.req-inc.php';
         include_once '../../functions/dbconnect.php';
         include_once '../../functions/category-functions.php';
         include_once '../../functions/product-functions.php';
@@ -40,14 +41,10 @@
                     $results = 'Product Added';
                 } else {
                     $results = 'Product was not Added';
-                }
-                
-            }
-            
+                }               
+            }           
         }
-        
-        
-        
+                    
         ?>
         
         <h1>Add Product</h1>

@@ -6,7 +6,8 @@
     </head>
     <body>
         <?php
-        // put your code here
+        require_once'../../includes/access-required.html.php';
+        require_once'../../includes/session-start.req-inc.php';
         ?>
     </body>
 </html>
