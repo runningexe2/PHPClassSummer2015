@@ -2,11 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="includes/css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title></title>        
     </head>
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="includes/css/style.css">
+        
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    
     <body>
         <br/>
 
